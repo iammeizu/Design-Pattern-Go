@@ -38,3 +38,24 @@ func (*RDBDAOFactory) CreateOrderDetailDAO() OrderDetailDAO{
 	return &RDBDetailDAO{}
 }
 
+type XMLMainDAO struct {}
+
+type XMLDetailDAO struct {}
+
+func (*XMLMainDAO) SaveOrderMain() {
+	fmt.Print("xml main saved\n")
+}
+
+func (*XMLDetailDAO) SaveOrderDetail() {
+	fmt.Print("xml detail saved\n")
+}
+
+type XMLDAOFactory struct {}
+
+func (*XMLDAOFactory) CreateOrderMainDAO() OrderMainDAO {
+	return &XMLMainDAO{}
+}
+
+func (*XMLDAOFactory) CreateOrderDetailDAO() OrderDetailDAO {
+	return &XMLDetailDAO{}
+}
